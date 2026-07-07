@@ -1,0 +1,23 @@
+{
+	"name": "code-file-viewer",
+	"version": "1.0.0",
+	"description": "Obsidian plugin: read-only viewer for code/text files with theme-aware Prism syntax highlighting",
+	"main": "main.js",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
+	},
+	"keywords": [
+		"obsidian",
+		"obsidian-plugin"
+	],
+	"license": "Unlicense",
+	"devDependencies": {
+		"@types/node": "^20.14.0",
+		"@types/prismjs": "^1.26.4",
+		"builtin-modules": "^3.3.0",
+		"esbuild": "^0.25.0",
+		"obsidian": "latest",
+		"typescript": "^5.5.0"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"id": "obsidian-code-file-viewer",
+	"name": "Obsidian Code File Viewer",
+	"version": "1.0.0",
+	"minAppVersion": "1.5.0",
+	"description": "View source-code and plain-text files (py, ts, sh, sql, yml, …) in a read-only view with theme-aware syntax highlighting.",
+	"author": "qojis",
+	"authorUrl": "",
+	"isDesktopOnly": false
+}

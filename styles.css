@@ -1,0 +1,204 @@
+/* ================================================================
+   Code File Viewer — view layout
+   Everything is derived from Obsidian's CSS variables, so the view
+   automatically matches the user's theme (light or dark).
+   ================================================================ */
+
+.view-content.cfv-view-content {
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+/* --- Toolbar ---------------------------------------------------- */
+
+.cfv-toolbar {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--size-4-2);
+	padding: var(--size-4-1) var(--size-4-3);
+	border-bottom: 1px solid var(--background-modifier-border);
+	font-size: var(--font-ui-small);
+	color: var(--text-muted);
+}
+
+.cfv-toolbar-info {
+	display: flex;
+	align-items: baseline;
+	gap: var(--size-4-2);
+	min-width: 0;
+}
+
+.cfv-lang {
+	font-family: var(--font-monospace);
+	white-space: nowrap;
+}
+
+.cfv-note {
+	color: var(--text-faint);
+	font-style: italic;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.cfv-copy {
+	flex: 0 0 auto;
+	font-size: var(--font-ui-small);
+}
+
+/* --- Scrolling code area ---------------------------------------- */
+
+.cfv-scroller {
+	flex: 1 1 auto;
+	overflow: auto;
+}
+
+.cfv-codewrap {
+	display: flex;
+	align-items: flex-start;
+	min-width: fit-content;
+	min-height: 100%;
+}
+
+.cfv-gutter,
+.cfv-pre {
+	margin: 0;
+	padding-top: var(--size-4-3);
+	padding-bottom: var(--size-4-3);
+	font-family: var(--font-monospace);
+	font-size: var(--code-size, 0.9em);
+	line-height: var(--line-height-normal);
+	background: transparent;
+}
+
+.cfv-gutter {
+	flex: 0 0 auto;
+	position: sticky;
+	left: 0;
+	padding-left: var(--size-4-3);
+	padding-right: var(--size-4-3);
+	text-align: right;
+	color: var(--text-faint);
+	background: var(--background-primary);
+	border-right: 1px solid var(--background-modifier-border);
+	user-select: none;
+}
+
+.cfv-pre {
+	flex: 1 1 auto;
+	padding-left: var(--size-4-3);
+	padding-right: var(--size-4-6);
+	tab-size: 4;
+	color: var(--code-normal);
+	white-space: pre;
+}
+
+.cfv-pre code {
+	font: inherit;
+	color: inherit;
+	background: transparent;
+	padding: 0;
+}
+
+/* --- Settings ---------------------------------------------------- */
+
+.cfv-settings-textarea {
+	width: 100%;
+	min-width: 300px;
+	font-family: var(--font-monospace);
+	font-size: var(--font-ui-small);
+}
+
+/* ================================================================
+   Prism token colors, mapped onto Obsidian's code variables.
+   These are the same variables themes use for code blocks, so the
+   palette always matches the active theme.
+   ================================================================ */
+
+.cfv-pre .token.comment,
+.cfv-pre .token.prolog,
+.cfv-pre .token.doctype,
+.cfv-pre .token.cdata {
+	color: var(--code-comment);
+	font-style: italic;
+}
+
+.cfv-pre .token.punctuation {
+	color: var(--code-punctuation);
+}
+
+.cfv-pre .token.tag,
+.cfv-pre .token.selector {
+	color: var(--code-tag);
+}
+
+.cfv-pre .token.attr-name,
+.cfv-pre .token.property,
+.cfv-pre .token.symbol,
+.cfv-pre .token.constant {
+	color: var(--code-property);
+}
+
+.cfv-pre .token.boolean,
+.cfv-pre .token.number {
+	color: var(--code-value);
+}
+
+.cfv-pre .token.string,
+.cfv-pre .token.char,
+.cfv-pre .token.attr-value,
+.cfv-pre .token.regex {
+	color: var(--code-string);
+}
+
+.cfv-pre .token.operator,
+.cfv-pre .token.entity,
+.cfv-pre .token.url {
+	color: var(--code-operator);
+}
+
+.cfv-pre .token.keyword,
+.cfv-pre .token.atrule {
+	color: var(--code-keyword);
+}
+
+.cfv-pre .token.function,
+.cfv-pre .token.class-name,
+.cfv-pre .token.builtin {
+	color: var(--code-function);
+}
+
+.cfv-pre .token.important,
+.cfv-pre .token.deleted {
+	color: var(--code-important);
+}
+
+.cfv-pre .token.variable {
+	color: var(--code-normal);
+}
+
+.cfv-pre .token.namespace {
+	opacity: 0.8;
+}
+
+/* Diff files: green / red beats the generic mapping above. */
+.cfv-pre .token.inserted {
+	color: var(--color-green);
+}
+
+.cfv-pre .token.deleted {
+	color: var(--color-red);
+}
+
+.cfv-pre .token.bold,
+.cfv-pre .token.important {
+	font-weight: var(--bold-weight, bold);
+}
+
+.cfv-pre .token.italic {
+	font-style: italic;
+}
